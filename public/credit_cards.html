@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Cards</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="sidebar2.css">
+    <link rel="stylesheet" href="header.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="credits_cards.css">
+    
+</head>
+<body>
+
+    <header class="header">
+        <div class="left">
+            <span class="logo">D R A K Z</span>
+            
+        </div>
+        <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Search for something" onkeyup="filterDashboard()">
+        </div>
+        <div class="icons">
+            <i class="fas fa-cog"></i>
+            <i class="fas fa-bell"></i>
+            <div class="profile">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User">
+            </div>
+        </div>
+        
+    </header>
+    
+    <div class="main-container">
+
+        <div class="sidebar" id="mySidebar">
+            <!-- Close Button (visible when sidebar is open) -->
+            <a href="javascript:void(0)" class="closebtn" id="close-button" onclick="closeNav()">
+                <img width="25" src="assets/icons/sidebarclose.png">
+            </a>
+           
+            
+            <ul class="sidebar-list">
+                <a href="dashboard.html">
+                    <li ><i class="fas fa-home"></i> <span>Dashboard</span></li>
+                </a>
+                <a href="accounts.html">
+                    <li><i class="fas fa-user"></i> <span>Accounts</span></li>
+                </a>
+                <a href="investments.html">
+                    <li><i class="fa-solid fa-chart-column"></i></i> <span>Investments</span></li>
+                </a>
+                <a href="credit_cards.html">
+                    <li class="active"><i class="fas fa-credit-card"></i> <span>Credit Cards</span></li>
+                </a>
+                <a href="blog.html">
+                    <li><i class="fa-solid fa-blog"></i> <span>Blog</span></li>
+                </a>
+                <a href="services.html">
+                    <li><i class="fas fa-tools"></i> <span>Services</span></li>
+                </a>
+                <a href="My_privilege.html">
+                    <li ><i class="fas fa-gift"></i> <span>My Privileges</span></li>
+                </a>
+                <a href="settings.html">
+                    <li><i class="fas fa-cog"></i> <span>Settings</span></li>
+                </a>
+            </ul>
+        </div>
+    
+
+        
+
+        
+        <div class="content" id="main">
+            
+            <div class="sec">
+              <section id="mycards">
+                  <div class="atm-cards-header">
+                          <h2>My Cards</h2>
+                      </div>
+                  <div class="atm-cards-container">
+                      
+              
+                      <!-- Swiper Container -->
+                      <div class="swiper-container">
+                          <div class="swiper-wrapper">
+                              <!-- Initially empty -->
+                          </div>
+              
+                          <!-- No Cards Message -->
+                          <div id="noCardsMessage" class="no-cards-message">Your Cards will be Displayed here</div>
+              
+                          <!-- Pagination (Indicators) -->
+                          <div class="swiper-pagination"></div>
+              
+                          <!-- Navigation Arrows -->
+                          <div class="swiper-button-next"></div>
+                          <div class="swiper-button-prev"></div>
+                      </div>
+                  </div>
+              </section>
+              <section id="addnewcard">
+                  <h2>Add New Card</h2>
+                  <div class="addcard">
+                      <form id="addCardForm">
+                          <div class="form-group">
+                              <label>Card Type</label>
+                              <input type="text" id="cardType" required>
+                          </div>
+                          <div class="form-group">
+                              <label>Name On Card</label>
+                              <input type="text" id="cardName" required>
+                          </div>
+                          <div class="form-group">
+                              <label>Card Number</label>
+                              <input type="text" id="cardNumber" placeholder="XXXX XXXX XXXX XXXX" required>
+                              <span class="error" id="cardNumberError"></span>
+                          </div>
+                          <div classs="organizer"> 
+                            <div class="form-group">
+                              <label>Valid From</label>
+                              <input type="text" id="validFrom" placeholder="MM/YY" required>
+                              <span class="error" id="validFromError"></span>
+                            </div>
+                            <div class="form-group">
+                              <label>Expiration Date</label>
+                              <input type="text" id="cardExpiry" placeholder="MM/YY" required>
+                              <span class="error" id="cardExpiryError"></span>
+                            </div>
+                          </div>
+                          <button type="submit" class="btn">Add Card</button>
+                      </form>
+                  </div>
+              </section>
+            </div>
+            <div class="sec">
+              <section id="Cardstatistics">
+                  <h2>Card Expense Statistics</h2>
+                  <div class="chart-container">
+                      <canvas id="expenseChart"></canvas>
+                  </div>
+              </section>
+              <section id="cardlist">
+                  <h2>Card List</h2>
+                  <div id="cardListContainer"></div>
+  
+                  <dialog id="cardDetailsDialog">
+                      <div>
+                          <h2>Card Details</h2>
+                          <p><strong>Card Type:</strong> <span id="detailCardType"></span></p>
+                          <p><strong>Name on Card:</strong> <span id="detailNameOnCard"></span></p>
+                          <p><strong>Card Number:</strong> <span id="detailCardNumber"></span></p>
+                          <p><strong>Valid From:</strong> <span id="detailValidFrom"></span></p>
+                          <p><strong>Expiration Date:</strong> <span id="detailExpirationDate"></span></p>
+                          <button id="deleteCardButton">Delete Card</button>
+                          <button onclick="document.getElementById('cardDetailsDialog').close()">Close</button>
+                      </div>
+                  </dialog>
+              </section>
+              
+            </div>
+          </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+   <script src="credit_cards.js"></script>
+    </body>
+</html>

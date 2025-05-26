@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="sidebar2.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="left">
+            <span class="logo">D R A K Z</span>
+        </div>
+        <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search for something">
+        </div>
+        <div class="icons">
+            <i class="fas fa-cog"></i>
+            <i class="fas fa-bell"></i>
+            <div class="profile">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User">
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="mySidebar">
+            <!-- Close Button (visible when sidebar is open) -->
+            <a href="javascript:void(0)" class="closebtn" id="close-button" onclick="closeNav()">
+                <img width="25" src="assets/icons/sidebarclose.png">
+            </a>
+
+            <!-- Sidebar List -->
+            <ul class="sidebar-list">
+                <a href="dashboard.html">
+                    <li><i class="fas fa-home"></i> <span>Dashboard</span></li>
+                </a>
+                <a href="accounts.html">
+                    <li><i class="fas fa-user"></i> <span>Accounts</span></li>
+                </a>
+                <a href="investments.html">
+                    <li><i class="fa-solid fa-chart-column"></i> <span>Investments</span></li>
+                </a>
+                <a href="credit_cards.html">
+                    <li><i class="fas fa-credit-card"></i> <span>Credit Cards</span></li>
+                </a>
+                <a href="#">
+                    <li class="active"><i class="fa-solid fa-blog"></i> <span>Blog</span></li>
+                </a>
+                <a href="services.html">
+                    <li><i class="fas fa-tools"></i> <span>Services</span></li>
+                </a>
+                <a href="My_privilege.html">
+                    <li><i class="fas fa-gift"></i> <span>My Privileges</span></li>
+                </a>
+                <a href="settings.html">
+                    <li><i class="fas fa-cog"></i> <span>Settings</span></li>
+                </a>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="page" id="main">
+            <div class="open">
+                <div class="container">
+                    <h1>DRAKZ</h1>
+                    <p>Digital Revenue and Asset Keeper Zone</p>
+                    <div>
+                        <button onclick="openForm()">Create your Blog</button>
+                        <button onclick="window.location.href='community_blogs.html'">Read Blogs</button>
+                    </div>
+                </div>
+                <div class="animation">
+                    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+                    <dotlottie-player src="https://lottie.host/03526903-22e0-410e-ba05-172cfc452385/oxnJaHzT42.lottie" background="transparent" speed="1" style="width:100%; height:650px; " loop autoplay></dotlottie-player>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay for Blog Form -->
+    <div class="overlay" id="overlay">
+        <div class="blog-form-container">
+            <h2>Create a New Blog</h2>
+            <form id="blogForm">
+                <label for="blogTitle">Blog Title</label>
+                <input type="text" id="blogTitle" placeholder="Enter your blog title" maxlength="50" required />
+                <p id="titleCharCount">0/50</p>
+
+                <label for="blogContent">Blog Content</label>
+                <textarea id="blogContent" placeholder="Write your content here..." rows="10" maxlength="1000" required></textarea>
+                <p id="contentCharCount">0/1000</p>
+
+                <p><strong>Author:</strong> <span id="authorName"></span></p>
+
+                <button type="submit">Publish Blog</button>
+                <button type="button" onclick="closeForm()">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="blog.js"></script>
+</body>
+</html>

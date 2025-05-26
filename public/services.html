@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar2.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="services.css">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <header class="header">
+        <div class="left">
+            <span class="logo">D R A K Z</span>
+            
+        </div>
+        <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Search for something" onkeyup="filterDashboard()">
+        </div>
+        <div class="icons">
+            <i class="fas fa-cog"></i>
+            <i class="fas fa-bell"></i>
+            <div class="profile">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User">
+            </div>
+        </div>
+        
+    </header>
+    
+    <div class="main-container">
+        <div class="sidebar" id="mySidebar">
+            <!-- Close Button (visible when sidebar is open) -->
+            <a href="javascript:void(0)" class="closebtn" id="close-button" onclick="closeNav()">
+                <img width="25" src="assets/icons/sidebarclose.png">
+            </a>
+           
+            <ul class="sidebar-list">
+                <a href="dashboard.html">
+                    <li><i class="fas fa-home"></i> <span>Dashboard</span></li>
+                </a>
+                <a href="accounts.html">
+                    <li><i class="fas fa-user"></i> <span>Accounts</span></li>
+                </a>
+                <a href="investments.html">
+                    <li><i class="fa-solid fa-chart-column"></i></i> <span>Investments</span></li>
+                </a>
+                <a href="credit_cards.html">
+                    <li><i class="fas fa-credit-card"></i> <span>Credit Cards</span></li>
+                </a>
+                <a href="blog.html">
+                    <li><i class="fa-solid fa-blog"></i> <span>Blog</span></li>
+                </a>
+                <a href="#">
+                    <li class="active"><i class="fas fa-tools"></i> <span>Services</span></li>
+                </a>
+                <a href="My_privilege.html">
+                    <li><i class="fas fa-gift"></i> <span>My Privileges</span></li>
+                </a>
+                <a href="settings.html">
+                    <li><i class="fas fa-cog"></i> <span>Settings</span></li>
+                </a>
+            </ul>
+        </div>
+    
+        <!-- Main Content -->
+        <div class="content" id="main">
+            <!-- Moved heading to top -->
+            <h2 class="services-heading">Need any Service</h2>
+            
+            <div class="service-cards">
+                <div class="service-card" onclick="showServiceDetails('bill-pay')">
+                    <div class="service-icon blue">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3>Bill Pay</h3>
+                    <p>Pay your bills online</p>
+                </div>
+                <div class="service-card" onclick="showServiceDetails('merchant-services')">
+                    <div class="service-icon yellow">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h3>Merchant Services</h3>
+                    <p>Payment solutions for businesses</p>
+                </div>
+                <div class="service-card" onclick="showServiceDetails('treasury-services')">
+                    <div class="service-icon green">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>Treasury Services</h3>
+                    <p>Cash management solutions</p>
+                </div>
+            </div>
+
+            <!-- Services List -->
+            <div class="services-list">
+                <!-- Removed "Bank Services List" heading -->
+                
+                <!-- Service Items -->
+                <h2 class="services-heading">Your Services</h2>
+                <div class="service-item">
+                    <div class="service-icon" style="background-color: #fee2e2;">
+                        <i class="fas fa-briefcase" style="color: #ef4444;"></i>
+                    </div>
+
+                    <div class="service-details">
+                        <div class="service-info">
+                            <h3>Your Loans</h3>
+                            <p>View your active loans</p>
+                        </div>
+                        <div class="service-info">
+                            <p>Home Loan: $240,000</p>
+                            <p>Next payment: 04/15/2025</p>
+                        </div>
+                        <div class="service-info">
+                            <p>Auto Loan: $18,500</p>
+                            <p>Next payment: 03/28/2025</p>
+                        </div>
+                        <a href="#" class="view-details" onclick="showUserLoanDetails()">View Details</a>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-icon" style="background-color: #fef3c7;">
+                        <i class="fas fa-wallet" style="color: #d97706;"></i>
+                    </div>
+                    <div class="service-details">
+                        <div class="service-info">
+                            <h3>Account Receipts</h3>
+                            <p>Your transaction history</p>
+                        </div>
+                        <div class="service-info">
+                            <p>Recent transactions: 24</p>
+                            <p>Last month: 86 transactions</p>
+                        </div>
+                        <div class="service-info">
+                            <p>Statements: 6 available</p>
+                            <p>Last statement: 03/01/2025</p>
+                        </div>
+                        <a href="#" class="view-details" onclick="showAccountReceipts()">View Details</a>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-icon" style="background-color: #dbeafe;">
+                        <i class="fas fa-piggy-bank" style="color: #3b82f6;"></i>
+                    </div>
+                    <div class="service-details">
+                        <div class="service-info">
+                            <h3>Your Savings</h3>
+                            <p>Track your savings goals</p>
+                        </div>
+                        <div class="service-info">
+                            <p>Balance: $12,345.67</p>
+                            <p>Interest rate: 2.85%</p>
+                        </div>
+                        <div class="service-info">
+                            <p>Goal progress: 68%</p>
+                            <p>Next milestone: $15,000</p>
+                        </div>
+                        <a href="#" class="view-details" onclick="showSavingsDetails()">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for service details -->
+    <div id="serviceModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="serviceModalContent"></div>
+        </div>
+    </div>
+
+    <script src="services.js"></script>
+    
+</body>
+</html>

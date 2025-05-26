@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Privileges</title>
+    <link rel="stylesheet" href="sidebar2.css">
+    <link rel="stylesheet" href="header.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="myprivilage.css">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <header class="header">
+        <div class="left">
+            <span class="logo">D R A K Z</span>
+        </div>
+        <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Search for something" onkeyup="filterDashboard()">
+        </div>
+        <div class="icons">
+            <i class="fas fa-cog"></i>
+            <i class="fas fa-bell"></i>
+            <div class="profile">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User">
+            </div>
+        </div>
+    </header>
+    
+    <div class="main-container">
+        <div class="sidebar" id="mySidebar">
+            <!-- Close Button (visible when sidebar is open) -->
+            <a href="javascript:void(0)" class="closebtn" id="close-button" onclick="closeNav()">
+                <img width="25" src="assets/icons/sidebarclose.png">
+            </a>
+           
+            <ul class="sidebar-list">
+                <a href="dashboard.html">
+                    <li><i class="fas fa-home"></i> <span>Dashboard</span></li>
+                </a>
+                <a href="accounts.html">
+                    <li><i class="fas fa-user"></i> <span>Accounts</span></li>
+                </a>
+                <a href="investments.html">
+                    <li><i class="fa-solid fa-chart-column"></i> <span>Investments</span></li>
+                </a>
+                <a href="credit_cards.html">
+                    <li><i class="fas fa-credit-card"></i> <span>Credit Cards</span></li>
+                </a>
+                <a href="blog.html">
+                    <li><i class="fa-solid fa-blog"></i> <span>Blog</span></li>
+                </a>
+                <a href="services.html">
+                    <li><i class="fas fa-tools"></i> <span>Services</span></li>
+                </a>
+                <a href="#">
+                    <li class="active"><i class="fas fa-gift"></i> <span>My Privileges</span></li>
+                </a>
+                <a href="settings.html">
+                    <li><i class="fas fa-cog"></i> <span>Settings</span></li>
+                </a>
+            </ul>
+        </div>
+    
+        <!-- Main Content -->
+        <div class="content" id="main">
+    <!-- Properties Section -->
+<div class="asset-box">
+    <div class="section-header">
+        <h2>Your Properties</h2>
+        <button class="add-property-btn" id="addPropertyBtn">
+            <i class="fas fa-plus"></i> Add Property
+        </button>
+    </div>
+    <div class="property-grid" id="propertyGrid">
+        <!-- Property Card 1 -->
+        <div class="property-card" id="property1">
+            <div class="property-image">
+                <img src="assets/images/apartment jpg for assets 2.jpg" alt="Sunset Villa">
+            </div>
+            <div class="property-details">
+                <h4>Sunset Villa</h4>
+                <p>Value: $750,000</p>
+                <p>Location: 123 Sunset Boulevard</p>
+            </div>
+            <div class="property-actions">
+                <button class="action-btn edit-btn" onclick="editProperty('property1')">
+                    <i class="fas fa-edit"></i>
+                </button>
+                <button class="action-btn delete-btn" onclick="deleteProperty('property1')">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Property Card 2 -->
+        <div class="property-card" id="property2">
+            <div class="property-image">
+                <img src="assets/images/apartment jpg for assets 1.jpg" alt="Downtown Apartment">
+            </div>
+            <div class="property-details">
+                <h4>Downtown Apartment</h4>
+                <p>Value: $450,000</p>
+                <p>Location: 456 Main Street</p>
+            </div>
+            <div class="property-actions">
+                <button class="action-btn edit-btn" onclick="editProperty('property2')">
+                    <i class="fas fa-edit"></i>
+                </button>
+                <button class="action-btn delete-btn" onclick="deleteProperty('property2')">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- Insurance Policies Section -->
+            <div class="asset-box">
+                <div class="section-header">
+                    <h2>Insurance Policies</h2>
+                </div>
+                <div class="policy-list">
+                    <div class="policy-card">
+                        <h4>Home Insurance</h4>
+                        <p>Policy Number: HM-2024-089</p>
+                        <p>Property: Sunset Villa</p>
+                        <p>Coverage: $800,000</p>
+                        <p>Renewal Date: Dec 31, 2024</p>
+                    </div>
+                    <div class="policy-card">
+                        <h4>Property Insurance</h4>
+                        <p>Policy Number: PR-2024-102</p>
+                        <p>Property: Downtown Apartment</p>
+                        <p>Coverage: $500,000</p>
+                        <p>Renewal Date: Mar 15, 2025</p>
+                    </div>
+                    <div class="policy-card">
+                        <h4>Mortgage Insurance</h4>
+                        <p>Policy Number: MI-2023-045</p>
+                        <p>Property: Sunset Villa</p>
+                        <p>Coverage: $400,000</p>
+                        <p>Renewal Date: Aug 22, 2024</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Precious Metals Section with Date of Purchase Added -->
+            <div class="asset-box">
+                <div class="section-header">
+                    <h2>Precious Metal Assets</h2>
+                </div>
+                <div class="metals-list">
+                    <div class="metal-card">
+                        <div class="metal-icon gold">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div class="metal-details">
+                            <h4>Gold</h4>
+                            <p>Amount: 250g</p>
+                            <p>Value: $15,750</p>
+                            <p>Date of Purchase: June 15, 2023</p>
+                        </div>
+                    </div>
+                    <div class="metal-card">
+                        <div class="metal-icon silver">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div class="metal-details">
+                            <h4>Silver</h4>
+                            <p>Amount: 5kg</p>
+                            <p>Value: $4,200</p>
+                            <p>Date of Purchase: October 3, 2023</p>
+                        </div>
+                    </div>
+                    <div class="metal-card">
+                        <div class="metal-icon platinum">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div class="metal-details">
+                            <h4>Platinum</h4>
+                            <p>Amount: 50g</p>
+                            <p>Value: $1,850</p>
+                            <p>Date of Purchase: February 22, 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Property Form Modal -->
+    <div id="propertyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Add New Property</h3>
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+            </div>
+            <form id="propertyForm">
+                <input type="hidden" id="propertyId" value="">
+                <div class="form-group">
+                    <label for="propertyName">Property Name</label>
+                    <input type="text" id="propertyName" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="propertyValue">Value ($)</label>
+                    <input type="number" id="propertyValue" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="propertyLocation">Location</label>
+                    <input type="text" id="propertyLocation" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="propertyImage">Property Image</label>
+                    <div class="file-input-container">
+                        <span class="file-input-label">Select Image</span>
+                        <input type="file" id="propertyImage" class="file-input" accept="image/*">
+                    </div>
+                    <div class="selected-file" id="selectedFileName">No file selected</div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Property</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="myprivilage.js"></script>
+</body>
+</html>
